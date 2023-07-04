@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Parking_Spot
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Grass
+    uniqueID: 4232342901
+    locked: 0
+  - name: Parking_Area
+    uniqueID: 676246645
+    locked: 0
+  - name: Road
+    uniqueID: 1554917055
+    locked: 0
+  - name: Buildings
+    uniqueID: 1191555337
+    locked: 0
+  - name: Bush_and_trees
+    uniqueID: 2245462035
+    locked: 0
+  - name: Strips
+    uniqueID: 2603483401
+    locked: 0
+  - name: Items
+    uniqueID: 1774125657
+    locked: 0
+  - name: Parking_Spot
+    uniqueID: 2089232655
+    locked: 0
+  - name: Car
+    uniqueID: 1090777901
+    locked: 0
+  - name: above_car
+    uniqueID: 3127438049
+    locked: 0
