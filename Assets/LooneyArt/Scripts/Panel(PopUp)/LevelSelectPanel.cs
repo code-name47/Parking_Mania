@@ -16,7 +16,7 @@ namespace LooneyDog {
         }
 
         private void OnClickBack() {
-            GameManager.Game.Screen.ClosePopUpScreen(transform, ScreenLocation.up, _transitionSpeed);
+            GameManager.Game.Screen.ClosePopUpScreen(transform, ScreenLocation.Pop, _transitionSpeed,_backButton);
         }
     }
 }

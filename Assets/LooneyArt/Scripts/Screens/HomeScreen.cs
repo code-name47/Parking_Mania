@@ -32,7 +32,7 @@ namespace LooneyDog
 
         private void OnClickStart()
         {
-            GameManager.Game.Screen.OpenPopUpScreen(_levelSelectPanel.transform, ScreenLocation.down, _transitionSpeed);
+            GameManager.Game.Screen.OpenPopUpScreen(_levelSelectPanel.transform, ScreenLocation.Pop, _transitionSpeed);
         }
 
         private void OnClickOptionButton()

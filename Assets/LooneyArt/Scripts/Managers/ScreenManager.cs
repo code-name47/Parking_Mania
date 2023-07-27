@@ -252,6 +252,13 @@ namespace LooneyDog
                         PopUpScreen.gameObject.SetActive(true);
                     }).SetEase(Ease.OutBounce).SetUpdate(true);
                     break;
+                case ScreenLocation.Pop:
+                    PopUpScreen.transform.localScale = Vector3.zero;
+
+                    PopUpScreen.DOScale(Vector3.one, Duration).OnStart(()=> {
+                        PopUpScreen.gameObject.SetActive(true);
+                    }).SetEase(Ease.OutBounce).SetUpdate(true);
+                    break;
             }
 
 
@@ -292,6 +299,14 @@ namespace LooneyDog
                     {
                         PopUpScreen.gameObject.SetActive(false);
                         PopUpScreen.transform.position = initialposition;
+                    }).SetEase(Ease.OutBounce).SetUpdate(true);
+                    break;
+                case ScreenLocation.Pop:
+                    //PopUpScreen.transform.localScale = Vector3.zero;
+                    PopUpScreen.DOScale(Vector3.zero, Duration).OnComplete(() =>
+                    {
+                        PopUpScreen.gameObject.SetActive(false);
+                        PopUpScreen.transform.localScale = Vector3.one;
                     }).SetEase(Ease.OutBounce).SetUpdate(true);
                     break;
             }
@@ -339,6 +354,15 @@ namespace LooneyDog
                         DisableButton.interactable = true;
                     }).SetEase(Ease.OutBounce).SetUpdate(true);
                     break;
+                case ScreenLocation.Pop:
+                    //PopUpScreen.transform.localScale = Vector3.zero;
+                    PopUpScreen.DOScale(Vector3.zero, Duration).OnComplete(() =>
+                    {
+                        PopUpScreen.gameObject.SetActive(false);
+                        PopUpScreen.transform.localScale = Vector3.one;
+                        DisableButton.interactable = true;
+                    }).SetEase(Ease.OutBounce).SetUpdate(true);
+                    break;
             }
         }
     }
@@ -348,7 +372,8 @@ namespace LooneyDog
         left = 1,
         right = 2,
         up = 3,
-        down = 4
+        down = 4,
+        Pop = 5
     }
     public enum ScreenId
     {
