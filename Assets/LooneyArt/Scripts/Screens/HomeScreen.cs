@@ -18,6 +18,8 @@ namespace LooneyDog
 
         public StorePanel Storepanel { get { return _storePanel; }set { _storePanel = value; } }
 
+        public float TransitionSpeed { get { return _transitionSpeed; }set { _transitionSpeed = value; } }
+
         [SerializeField] private Button _startButton;
         [SerializeField] private Button _optionButton;
         [SerializeField] private Button _storeButton;

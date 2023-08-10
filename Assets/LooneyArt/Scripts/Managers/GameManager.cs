@@ -9,9 +9,8 @@ namespace LooneyDog
     {
         public static GameManager Game;
 
-        /*public DataManager Data;
+        public DataManager Data;
         public LevelManager Level;
-        */
         public ScreenManager Screen;
         /*public SoundManager Sound;
         public AdManager Admob;*/
@@ -44,9 +43,9 @@ namespace LooneyDog
 
         private void Initialize()
         {
-            /*if (Data == null) { Data = gameObject.GetComponent<DataManager>(); }
+            if (Data == null) { Data = gameObject.GetComponent<DataManager>(); }
             if (Level == null) { Level = gameObject.GetComponent<LevelManager>(); }
-            if (Sound == null) { Sound = gameObject.GetComponent<SoundManager>(); }
+            /*if (Sound == null) { Sound = gameObject.GetComponent<SoundManager>(); }
             if (Admob == null) { Admob = gameObject.GetComponent<AdManager>(); }*/
             /*if (Skin == null) { Skin = gameObject.GetComponent<SkinManager>(); }*/
             if (Screen == null) { Screen = gameObject.GetComponent<ScreenManager>(); }
