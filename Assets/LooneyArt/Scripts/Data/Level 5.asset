@@ -16,21 +16,21 @@ MonoBehaviour:
   _levelCompleted: 1
   _starsObtained: 1
   datas:
-  - timeRequriedFor_1Star: 0
-    timeRequriedFor_2Star: 0
-    timeRequriedFor_3Star: 0
-    rewardfor1Star: 0
-    rewardfor2Star: 0
-    rewardfor3Star: 0
-  - timeRequriedFor_1Star: 0
-    timeRequriedFor_2Star: 0
-    timeRequriedFor_3Star: 0
-    rewardfor1Star: 0
-    rewardfor2Star: 0
-    rewardfor3Star: 0
-  - timeRequriedFor_1Star: 0
-    timeRequriedFor_2Star: 0
-    timeRequriedFor_3Star: 0
-    rewardfor1Star: 0
-    rewardfor2Star: 0
-    rewardfor3Star: 0
+  - timeRequriedFor_1Star: 60
+    timeRequriedFor_2Star: 55
+    timeRequriedFor_3Star: 50
+    rewardfor1Star: 100
+    rewardfor2Star: 200
+    rewardfor3Star: 300
+  - timeRequriedFor_1Star: 55
+    timeRequriedFor_2Star: 50
+    timeRequriedFor_3Star: 45
+    rewardfor1Star: 200
+    rewardfor2Star: 300
+    rewardfor3Star: 400
+  - timeRequriedFor_1Star: 45
+    timeRequriedFor_2Star: 40
+    timeRequriedFor_3Star: 35
+    rewardfor1Star: 300
+    rewardfor2Star: 400
+    rewardfor3Star: 500
