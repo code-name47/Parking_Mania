@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartMenu : MonoBehaviour
+namespace LooneyDog
 {
-    // Start is called before the first frame update
-    UserDataHandler m_userDataHandler; 
-    void Start()
+    public class StartMenu : MonoBehaviour
     {
-        //singleton calling
-        m_userDataHandler = UserDataHandler.Instance();
-    }
+        // Start is called before the first frame update
+        UserDataHandler m_userDataHandler;
+        void Start()
+        {
+            //singleton calling
+            m_userDataHandler = UserDataHandler.Instance();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 }

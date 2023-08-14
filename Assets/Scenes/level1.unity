@@ -4347,7 +4347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8450879692933194464, guid: e157c66ae7a4ded40b99b9d2b584dcf1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.53
+      value: 0.426
       objectReference: {fileID: 0}
     - target: {fileID: 8450879692933194464, guid: e157c66ae7a4ded40b99b9d2b584dcf1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6343,11 +6343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2970006992285357759, guid: b9c0156f9af4e6141b00d6906c345f12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.33
+      value: 8.61
       objectReference: {fileID: 0}
     - target: {fileID: 2970006992285357759, guid: b9c0156f9af4e6141b00d6906c345f12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.36
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 2970006992285357759, guid: b9c0156f9af4e6141b00d6906c345f12, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6380,6 +6380,10 @@ PrefabInstance:
     - target: {fileID: 2970006992285357759, guid: b9c0156f9af4e6141b00d6906c345f12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2970006992515944886, guid: b9c0156f9af4e6141b00d6906c345f12, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 2970006992515944886, guid: b9c0156f9af4e6141b00d6906c345f12, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6622,6 +6626,10 @@ PrefabInstance:
     - target: {fileID: 8722986003297514188, guid: a9c0029826f31ce4fa694cd46a4104d8, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722986003297514188, guid: a9c0029826f31ce4fa694cd46a4104d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8722986003786844639, guid: a9c0029826f31ce4fa694cd46a4104d8, type: 3}
       propertyPath: Car

@@ -7,13 +7,14 @@ namespace LooneyDog
 
     public class DataManager : MonoBehaviour
     {
-        public PlayerData player { get; private set; } = new PlayerData();
+        public PlayerData player{ get; private set; } = new PlayerData();
         [SerializeField]
         private string master_Keyword;
 
         void Start()
         {
             Read(player);
+            player.Check();
         }
 
         void OnDisable()

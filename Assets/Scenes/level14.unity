@@ -8510,6 +8510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8722986003297514188, guid: a9c0029826f31ce4fa694cd46a4104d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8722986003786844639, guid: a9c0029826f31ce4fa694cd46a4104d8, type: 3}
       propertyPath: Car
       value: 

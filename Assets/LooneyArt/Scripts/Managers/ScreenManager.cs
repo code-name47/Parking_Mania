@@ -13,12 +13,14 @@ namespace LooneyDog
         //public ReviveScreen Revive { get { return _revive; } set { _revive = value; } }
         public GameOverScreen GameOver { get { return _gameOver; } set { _gameOver = value; } }
         public SplashScreen Splsh { get { return _splash; } set { _splash = value; } }
+
+        public LoadingScreen Load { get { return _load; } set { _load = value; } }
         /*       public ResultScreen Result { get { return _result; } set { _result = value; } }
                public SplashScreen Splash { get { return _splash; } set { _splash = value; } }
                public ReviveScreen Revive { get { return _revive; } set { _revive = value; } }
                public SettingScreen Setting { get { return _setting; } set { _setting = value; } }
 
-               public LoadingScreen Load { get { return _load; } set { _load = value; } }
+               
                public TopMenu Top { get { return _topMenu; } set { _topMenu = value; } }*/
 
         [SerializeField] private GameOverScreen _gameOver;
@@ -26,14 +28,14 @@ namespace LooneyDog
         [SerializeField] private HomeScreen _home;
         [SerializeField] private GameScreen _gameScreen;
         [SerializeField] private SplashScreen _splash;
-
+        [SerializeField] private LoadingScreen _load;
         [SerializeField] private float _fadeScreenDuration;
         /* [SerializeField] private ResultScreen _result;
          [SerializeField] private SplashScreen _splash;
          [SerializeField] private ReviveScreen _revive;
          [SerializeField] private SettingScreen _setting;
 
-         [SerializeField] private LoadingScreen _load;
+         
          [SerializeField] private TopMenu _topMenu;
  */
         private void Awake()
@@ -131,7 +133,7 @@ namespace LooneyDog
             ToScreen.SetActive(true);
             UnfadeScreen(ToScreenImages, ToScreenText, ImageAplhaRef, TextAplhaRef);
             //StartCoroutine(DisableScreenAfter(2, FromScreen));
-            StartCoroutine(DisableScreenAfter(_fadeScreenDuration, FromScreen, FromScreenImages, FromScreenText, FromImageAlphaRef, FromTextAplhaRef));
+            StartCoroutine(DisableScreenAfter(_fadeScreenDuration+1, FromScreen, FromScreenImages, FromScreenText, FromImageAlphaRef, FromTextAplhaRef));
         }
 
         private void fadeScreen(Image[] images, TextMeshProUGUI[] texts)

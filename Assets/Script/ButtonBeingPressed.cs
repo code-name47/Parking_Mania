@@ -3,33 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonBeingPressed : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+namespace LooneyDog
 {
-
-    public bool PointerDown;
-    public static float Accelerator_Output;
-
-
-    // Update is called once per frame
-    void Update()
+    public class ButtonBeingPressed : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
-        if (PointerDown == true || Input.GetButton("Fire2"))
+
+        public bool PointerDown;
+        public static float Accelerator_Output;
+
+        
+        // Update is called once per frame
+        void Update()
         {
-            Accelerator_Output = 1;
+            if (PointerDown == true || Input.GetButton("Fire2"))
+            {
+                Accelerator_Output = 1;
+                GameManager.Game.Screen.GameScreen.StartGameTimer();
+
+            }
+            else
+            {
+                Accelerator_Output = 0;
+            }
         }
-        else
+
+        public void OnPointerDown(PointerEventData eventData)
         {
-            Accelerator_Output = 0;
+            PointerDown = true;
         }
-    }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        PointerDown = true;
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        PointerDown = false;
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            PointerDown = false;
+        }
     }
 }
