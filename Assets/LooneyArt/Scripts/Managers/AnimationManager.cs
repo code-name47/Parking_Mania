@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System;
+using TMPro;
 
 namespace LooneyDog
 {
@@ -15,7 +17,7 @@ namespace LooneyDog
             Quaternion initialRotation = Object.rotation;
 
             Object.localScale = new Vector3(10, 10, 10);
-            Object.DOScale(1, TransitionSpeed).SetEase(Ease.OutElastic,1f);
+            Object.DOScale(1, TransitionSpeed).SetEase(Ease.OutElastic,1f).SetUpdate(true);
         }
 
         public void WobbleAnimation(Transform Object, float Duration, int shakeStrength,int shakes) 
@@ -24,7 +26,14 @@ namespace LooneyDog
             Vector3 initialPosition = Object.position;
             Quaternion initialRotation = Object.rotation;
 
-            Object.DOShakeRotation(Duration, shakeStrength,shakes,0,true);
+            Object.DOShakeRotation(Duration, shakeStrength,shakes,0,true).SetUpdate(true);
+        }
+
+        public void IntTextAnimation(TextMeshProUGUI textBox, int NewValue, float transitionSpeed) {
+            string textboxtext = textBox.text;
+            int prev = Convert.ToInt32(textboxtext);
+            textBox.DOCounter(prev, (Int32)NewValue, transitionSpeed,false).SetUpdate(true);
+            
         }
 
     }

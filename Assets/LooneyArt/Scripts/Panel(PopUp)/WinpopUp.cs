@@ -47,6 +47,7 @@ namespace LooneyDog
         }
         public void ActivateStars(int starsObtained)
         {
+            DisableStars();
             for (int i = 0; i < _stars.Length; i++) {
                 if (i <= starsObtained) {
                     _stars[i].SetActive(true);

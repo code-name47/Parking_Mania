@@ -183,6 +183,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -191,9 +192,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -214,6 +215,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -311,7 +314,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 48c571119b2c28120800000000000000
-      internalID: 2414706450335489156
+      internalID: 7036429200971125428
       vertices: []
       indices: 
       edges: []
@@ -332,7 +335,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 127306e8b15962af0800000000000000
-      internalID: -421485569527236831
+      internalID: -5234152377485142622
       vertices: []
       indices: 
       edges: []
@@ -353,7 +356,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: fc21643d4039f5aa0800000000000000
-      internalID: -6170051315540553009
+      internalID: -5602690311009867018
       vertices: []
       indices: 
       edges: []
@@ -374,7 +377,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e728f40d5198531d0800000000000000
-      internalID: -3371638019234758018
+      internalID: -84200886527768594
       vertices: []
       indices: 
       edges: []
@@ -395,7 +398,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cfb69cce6e8bbf820800000000000000
-      internalID: 2953157282626104316
+      internalID: -4914147924657291694
       vertices: []
       indices: 
       edges: []
@@ -416,7 +419,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 608f517e7bf8d3f10800000000000000
-      internalID: 2251113408773879814
+      internalID: 3792291966082524265
       vertices: []
       indices: 
       edges: []
@@ -437,7 +440,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8bb054674defa3b80800000000000000
-      internalID: -8414132765317592136
+      internalID: -4929624057928081873
       vertices: []
       indices: 
       edges: []
@@ -458,7 +461,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1b48b79d8d418aca0800000000000000
-      internalID: -6005527181504314191
+      internalID: 3054170317790674670
       vertices: []
       indices: 
       edges: []
@@ -479,7 +482,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8d07517d86da3b3f0800000000000000
-      internalID: -886174035865145128
+      internalID: 5317392506353393911
       vertices: []
       indices: 
       edges: []
@@ -500,7 +503,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4568e4e6fec4cd1d0800000000000000
-      internalID: -3324697833674733996
+      internalID: 4532457157399104425
       vertices: []
       indices: 
       edges: []
@@ -521,7 +524,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 53a841f3e3d1a2dd0800000000000000
-      internalID: -2510161689122141643
+      internalID: 8981183417093047217
       vertices: []
       indices: 
       edges: []
@@ -542,7 +545,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 74d5f6d00d48a7c80800000000000000
-      internalID: -8324194932127474361
+      internalID: -3562196693458838527
       vertices: []
       indices: 
       edges: []
@@ -557,6 +560,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Fire_SpriteSheet_7: 3054170317790674670
+      Fire_SpriteSheet_11: -3562196693458838527
+      Fire_SpriteSheet_3: -84200886527768594
+      Fire_SpriteSheet_8: 5317392506353393911
+      Fire_SpriteSheet_5: 3792291966082524265
+      Fire_SpriteSheet_1: -5234152377485142622
+      Fire_SpriteSheet_6: -4929624057928081873
+      Fire_SpriteSheet_10: 8981183417093047217
+      Fire_SpriteSheet_4: -4914147924657291694
+      Fire_SpriteSheet_2: -5602690311009867018
+      Fire_SpriteSheet_0: 7036429200971125428
+      Fire_SpriteSheet_9: 4532457157399104425
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

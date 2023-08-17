@@ -39,13 +39,17 @@ namespace LooneyDog {
         }
 
         private void OnClickLevelButton() {
+            
             GameManager.Game.Screen.LoadFadeScreen(GameManager.Game.Screen.Home.gameObject, GameManager.Game.Screen.Load.gameObject);
             GameManager.Game.Screen.Load.SetSceneIndexAndDifficulty(EventSystem.current.currentSelectedGameObject.GetComponent<LevelButton>().ButtonId, (GameDifficulty)_difficultytSelector.value);
             GameManager.Game.Screen.ClosePopUpScreen(transform, ScreenLocation.Pop, _transitionSpeed);
+            GameManager.Game.Screen.DeactivateAllButtons(gameObject, _transitionSpeed);
             //GameManager.Game.Level.LoadLevel(GameManager.Game.Screen.Home.gameObject, GameManager.Game.Level)
         }
 
         private void OnClickBack() {
+            GameManager.Game.Screen.DeactivateAllButtons(gameObject, _transitionSpeed);
+            GameManager.Game.Screen.DeactivateAllButtons(GameManager.Game.Screen.Home.gameObject, _transitionSpeed);
             GameManager.Game.Screen.ClosePopUpScreen(transform, ScreenLocation.Pop, _transitionSpeed,_backButton);
         }
 

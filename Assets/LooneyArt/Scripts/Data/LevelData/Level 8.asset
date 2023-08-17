@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8633a9008f0bd124f8d9bc63f5f7457b, type: 3}
-  m_Name: Level 10
+  m_Name: Level 8
   m_EditorClassIdentifier: 
-  _levelNumber: 10
-  _levelCompleted: 1
-  _starsObtained: 1
+  _levelNumber: 8
+  _levelCompleted: 0
+  _starsObtained: 0
   datas:
-  - timeRequriedFor_1Star: 45
-    timeRequriedFor_2Star: 40
-    timeRequriedFor_3Star: 35
+  - timeRequriedFor_1Star: 60
+    timeRequriedFor_2Star: 55
+    timeRequriedFor_3Star: 50
     rewardfor1Star: 100
     rewardfor2Star: 200
     rewardfor3Star: 300
-  - timeRequriedFor_1Star: 35
-    timeRequriedFor_2Star: 30
-    timeRequriedFor_3Star: 25
+  - timeRequriedFor_1Star: 50
+    timeRequriedFor_2Star: 45
+    timeRequriedFor_3Star: 40
     rewardfor1Star: 200
     rewardfor2Star: 300
     rewardfor3Star: 400
-  - timeRequriedFor_1Star: 25
-    timeRequriedFor_2Star: 20
-    timeRequriedFor_3Star: 15
+  - timeRequriedFor_1Star: 40
+    timeRequriedFor_2Star: 35
+    timeRequriedFor_3Star: 30
     rewardfor1Star: 300
     rewardfor2Star: 400
     rewardfor3Star: 500

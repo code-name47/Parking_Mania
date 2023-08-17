@@ -54,6 +54,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -62,9 +63,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -85,6 +86,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -386,6 +389,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Dark_WaterFall_3: -5424811572536727798
+      Dark_WaterFall_6: -8890388495659344594
+      Dark_WaterFall_7: 5643300651482609527
+      Dark_WaterFall_0: -5793807815032872114
+      Dark_WaterFall_8: -1364933047453808706
+      Dark_WaterFall_5: 1715434722895600151
+      Dark_WaterFall_4: -6653242978423265845
+      Dark_WaterFall_9: 3125056379981227363
+      Dark_WaterFall_2: 7903305575040851679
+      Dark_WaterFall_1: -8997137852172700114
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

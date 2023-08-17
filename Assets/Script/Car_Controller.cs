@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 namespace LooneyDog
 {
 	public class Car_Controller : MonoBehaviour
 	{
+		public SpriteRenderer CarSprite { get { return _carSprite; } set { _carSprite = value; } }
+		public float AccelerationPower { get { return accelerationPower; } set { accelerationPower = value; } }
+		public float SteeringPower { get { return steeringPower; } set { steeringPower = value; } }
 
-
-		Rigidbody2D rb;
+		[SerializeField]  Rigidbody2D rb;
 
 		[SerializeField]
 		float accelerationPower = 5f;
@@ -20,17 +23,21 @@ namespace LooneyDog
 
 		[SerializeField] bool _gameCompleted;
 
+
+		[SerializeField] private SpriteRenderer _carSprite;
+		
+
 		//------------------------------  Initialisations   -----------------------------------
 		void Start()
 		{
-			rb = GetComponent<Rigidbody2D>();
+/*
 			Game_Win.SetActive(false);
-			Game_Over.SetActive(false);
+			Game_Over.SetActive(false);*/
 			Parking_dot_Front.Parking_Front = false;
 			Parking_Spot_back.Parking_Back = false;
 			_gameCompleted = false;
 			GameManager.Game.Screen.GameScreen.SetCarControllerToUi(transform);
-
+			GameManager.Game.Skin.ApplySkin(this, _carSprite);
 		}
 
 		//----------------------------------------------------------------------

@@ -13,9 +13,10 @@ namespace LooneyDog
         public LevelManager Level;
         public ScreenManager Screen;
         public AnimationManager Anime;
+        public SkinManager Skin;
         /*public SoundManager Sound;
         public AdManager Admob;*/
-        /* public SkinManager Skin;
+        /* 
          public SoundManager Sound;*/
 
 
@@ -31,7 +32,7 @@ namespace LooneyDog
             {
                 Destroy(gameObject);
             }
-
+            Application.targetFrameRate = -1;
         }
 
         private void Start()
@@ -50,7 +51,7 @@ namespace LooneyDog
 
             /*if (Sound == null) { Sound = gameObject.GetComponent<SoundManager>(); }
             if (Admob == null) { Admob = gameObject.GetComponent<AdManager>(); }*/
-            /*if (Skin == null) { Skin = gameObject.GetComponent<SkinManager>(); }*/
+            if (Skin == null) { Skin = gameObject.GetComponent<SkinManager>(); }
             if (Screen == null) { Screen = gameObject.GetComponent<ScreenManager>(); }
 
             

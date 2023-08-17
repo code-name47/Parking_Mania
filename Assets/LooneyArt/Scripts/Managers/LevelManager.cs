@@ -74,6 +74,7 @@ namespace LooneyDog
             {
                 GameManager.Game.Screen.GameScreen.GameWin(starsObtained, _reward);
                 SaveLevelDataToSO(GameStatus, starsObtained);
+                AddCoinReward(_reward);
             }
             else {
                 GameManager.Game.Screen.GameScreen.GameLose();
@@ -110,6 +111,11 @@ namespace LooneyDog
         {
             _levelNumber = levelnumber;
             _difficulty = difficulty;
+        }
+
+        public void AddCoinReward(int reward) {
+            GameManager.Game.Data.player.AddRewardCoins(reward);
+            GameManager.Game.Screen.Top.UpdateCoinData();
         }
 
 

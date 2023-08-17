@@ -15,6 +15,8 @@ namespace LooneyDog
         public SplashScreen Splsh { get { return _splash; } set { _splash = value; } }
 
         public LoadingScreen Load { get { return _load; } set { _load = value; } }
+
+        public TopPanel Top { get { return _top; } set { _top = value; } }
         /*       public ResultScreen Result { get { return _result; } set { _result = value; } }
                public SplashScreen Splash { get { return _splash; } set { _splash = value; } }
                public ReviveScreen Revive { get { return _revive; } set { _revive = value; } }
@@ -30,6 +32,7 @@ namespace LooneyDog
         [SerializeField] private SplashScreen _splash;
         [SerializeField] private LoadingScreen _load;
         [SerializeField] private float _fadeScreenDuration;
+        [SerializeField] private TopPanel _top;
         /* [SerializeField] private ResultScreen _result;
          [SerializeField] private SplashScreen _splash;
          [SerializeField] private ReviveScreen _revive;
@@ -365,6 +368,43 @@ namespace LooneyDog
                         DisableButton.interactable = true;
                     }).SetEase(Ease.OutBounce).SetUpdate(true);
                     break;
+            }
+        }
+
+
+        public void DeactivateAllButtons(GameObject Parent, float activationTime) {
+            Button[] buttons = Parent.GetComponentsInChildren<Button>(false);
+            int length=0;
+
+            for (int i = 0; i < buttons.Length; i++) {
+                if (buttons[i].interactable)
+                {
+                    length++;
+                }
+            }
+
+            Button[] interactableButton = new Button[length];
+
+            for (int i = 0,j=0; j < interactableButton.Length; i++) {
+                if (buttons[i].interactable) {
+                    interactableButton[j] = buttons[i];
+                    j++;
+                }
+            }
+
+            for (int i = 0; i < interactableButton.Length; i++) {
+                interactableButton[i].interactable = false;
+            }
+            StartCoroutine(ActivateAllButtons(interactableButton, activationTime));
+        }
+
+        public IEnumerator ActivateAllButtons(Button[] buttons, float activationTime)
+        {
+            yield return new WaitForSeconds(activationTime);
+            
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                buttons[i].interactable = true;
             }
         }
     }

@@ -38,13 +38,22 @@ namespace LooneyDog
             _exitButton.onClick.AddListener(OnClickExitButton);
         }
 
+        private void OnEnable()
+        {
+            GameManager.Game.Screen.OpenPopUpScreen(GameManager.Game.Screen.Top.transform, ScreenLocation.up, _transitionSpeed);
+            GameManager.Game.Skin.GetCurrentVehicleSkin();
+        }
+
         private void OnClickStart()
         {
+            GameManager.Game.Screen.DeactivateAllButtons(gameObject,_transitionSpeed);
             GameManager.Game.Screen.OpenPopUpScreen(_levelSelectPanel.transform, ScreenLocation.Pop, _transitionSpeed);
+        
         }
 
         private void OnClickOptionButton()
         {
+            GameManager.Game.Screen.DeactivateAllButtons(gameObject, _transitionSpeed);
             GameManager.Game.Screen.OpenPopUpScreen(_homeOptionPanel.transform, ScreenLocation.left, _transitionSpeed);
         }
 
@@ -54,8 +63,8 @@ namespace LooneyDog
         }
 
         private void OnClickStoreButton() {
+            GameManager.Game.Screen.DeactivateAllButtons(gameObject, _transitionSpeed);
             GameManager.Game.Screen.OpenPopUpScreen(_storePanel.transform, ScreenLocation.Pop, _transitionSpeed);
-        
         }
        
     }

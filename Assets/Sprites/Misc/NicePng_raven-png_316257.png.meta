@@ -99,6 +99,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -107,9 +108,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -130,6 +131,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -746,6 +749,32 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      NicePng_raven-png_316257_18: -6522832856289991283
+      NicePng_raven-png_316257_23: 1344490313697378802
+      NicePng_raven-png_316257_14: -531261480808951099
+      NicePng_raven-png_316257_19: 3983946567800123392
+      NicePng_raven-png_316257_9: 2603412709723380690
+      NicePng_raven-png_316257_17: -2845384238710462116
+      NicePng_raven-png_316257_0: -2531392169327908976
+      NicePng_raven-png_316257_21: 8387107770145578534
+      NicePng_raven-png_316257_1: -5036186757593522881
+      NicePng_raven-png_316257_2: 2760227678308109186
+      NicePng_raven-png_316257_15: -2714468718194192366
+      NicePng_raven-png_316257_13: 5176080658058118630
+      NicePng_raven-png_316257_11: 4061340227854114617
+      NicePng_raven-png_316257_10: 7918411787789076251
+      NicePng_raven-png_316257_6: 8630979495410477299
+      NicePng_raven-png_316257_7: -3499322712345895432
+      NicePng_raven-png_316257_22: 1488054593818338950
+      NicePng_raven-png_316257_12: -51435962159833148
+      NicePng_raven-png_316257_16: -5936442425090355107
+      NicePng_raven-png_316257_8: 1180301711371877306
+      NicePng_raven-png_316257_20: -3578495191385267949
+      NicePng_raven-png_316257_4: -4312401542848540861
+      NicePng_raven-png_316257_24: -7256745776957313881
+      NicePng_raven-png_316257_3: 9038012870768316116
+      NicePng_raven-png_316257_5: 1099153051328231301
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
