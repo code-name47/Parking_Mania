@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860afb1cc02ebb840bf5d1da9364513d, type: 3}
+  m_Name: MustangGt
+  m_EditorClassIdentifier: 
+  _carId: 8
+  _accelaration: 6
+  _handling: 6
+  _carSkin: {fileID: 21300000, guid: 7b8abf414de82254eaaf69e24d27d436, type: 3}
+  _unLocked: 0

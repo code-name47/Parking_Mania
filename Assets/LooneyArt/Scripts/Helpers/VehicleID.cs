@@ -5,9 +5,16 @@ namespace LooneyDog
 {
     public enum VehicleID
     {
-        RedCar = 0,
-        HatchBack = 1,
-        PickupTruck = 2,
-        YellowCar = 3
+        MarutiSwift = 0,
+        TataTigor = 1,
+        MarutiXuv600 = 2,
+        RenaultDuster = 3,
+        MahindraThar = 4,
+        HondaCivic =5,
+        MiniCooper = 6,
+        Porche911Gt3 = 7,
+        MustangGT =8,
+        AstonMartin = 9
+
     }
 }
