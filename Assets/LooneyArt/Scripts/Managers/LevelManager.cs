@@ -14,11 +14,13 @@ namespace LooneyDog
 
         public LevelData[] Leveldatas { get { return levelDatas; }set { levelDatas = value; } }
 
+        public bool GameCompletedBool { get { return _gameCompletedBool; }set { _gameCompletedBool = value; } }
+
         [SerializeField] private int _levelNumber;
         [SerializeField] private GameDifficulty _difficulty;
         [SerializeField] private int _reward;
         [SerializeField] private int _starsObtained;
-        //[SerializeField] private Time
+        [SerializeField] private bool _gameCompletedBool;
         private LevelDataStruct Currentleveldata;
 
         [SerializeField] private LevelData[] levelDatas; 
@@ -69,15 +71,20 @@ namespace LooneyDog
         }
 
         public void GameCompleted(bool GameStatus) {
-            int starsObtained = CalculateStars();
-            if (GameStatus)
+            if (!_gameCompletedBool)
             {
-                GameManager.Game.Screen.GameScreen.GameWin(starsObtained, _reward);
-                SaveLevelDataToSO(GameStatus, starsObtained);
-                AddCoinReward(_reward);
-            }
-            else {
-                GameManager.Game.Screen.GameScreen.GameLose();
+                _gameCompletedBool = true;
+                int starsObtained = CalculateStars();
+                if (GameStatus)
+                {
+                    GameManager.Game.Screen.GameScreen.GameWin(starsObtained, _reward);
+                    SaveLevelDataToSO(GameStatus, starsObtained);
+                    AddCoinReward(_reward);
+                }
+                else
+                {
+                    GameManager.Game.Screen.GameScreen.GameLose();
+                }
             }
         }
 

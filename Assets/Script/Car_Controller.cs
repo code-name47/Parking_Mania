@@ -10,6 +10,8 @@ namespace LooneyDog
 		public SpriteRenderer CarSprite { get { return _carSprite; } set { _carSprite = value; } }
 		public float AccelerationPower { get { return accelerationPower; } set { accelerationPower = value; } }
 		public float SteeringPower { get { return steeringPower; } set { steeringPower = value; } }
+		public GameObject CarPrefab { get { return _carPrefab; } set { _carPrefab = value; } }
+		public HealthControler Healthcontroller { get { return _healthcontroller; }set{ _healthcontroller = value; } }
 
 		[SerializeField]  Rigidbody2D rb;
 
@@ -18,26 +20,29 @@ namespace LooneyDog
 		[SerializeField]
 		float steeringPower = 5f;
 		float steeringAmount, speed, direction;
-		public GameObject Game_Win, Game_Over;
 		public AudioSource Car_Sound;
 
 		[SerializeField] bool _gameCompleted;
 
 
 		[SerializeField] private SpriteRenderer _carSprite;
+		[SerializeField] private HealthControler _healthcontroller;
+		[SerializeField] private float _defaultDamage,_carFlashTime,_knockBack;
+		[SerializeField] private Transform _nextObjective;
+		[SerializeField] CameraController _cameraController;
+		[SerializeField] GameObject _carPrefab;
 		
 
 		//------------------------------  Initialisations   -----------------------------------
 		void Start()
 		{
-/*
-			Game_Win.SetActive(false);
-			Game_Over.SetActive(false);*/
+
 			Parking_dot_Front.Parking_Front = false;
 			Parking_Spot_back.Parking_Back = false;
-			_gameCompleted = false;
-			GameManager.Game.Screen.GameScreen.SetCarControllerToUi(transform);
-			GameManager.Game.Skin.ApplySkin(this, _carSprite);
+			GameManager.Game.Screen.GameScreen.SetCarControllerToUi(transform,_nextObjective);
+			//GameManager.Game.Skin.ApplySkin(this, _carSprite);
+			GameManager.Game.Skin.ApplyCarPrefab(this);
+			_cameraController.SetCameraFollowObject(transform);
 		}
 
 		//----------------------------------------------------------------------
@@ -77,6 +82,14 @@ namespace LooneyDog
 				rb.drag = 4f;
 			}
 		}
+
+		//-------------------------------- Car Stop --------------------------------------
+		public void StopCar(Vector2 collisionPoint) {
+			rb.velocity = Vector2.zero;
+			rb.angularVelocity = 0;
+			OnCollisionPush(collisionPoint,_knockBack);
+		}
+
 		//-------------------------------- Engine Sound ----------------------------------
 		void carvol()
 		{
@@ -87,17 +100,51 @@ namespace LooneyDog
 			else
 				Car_Sound.volume = (Car_Sound.volume - 0.01f);
 		}
+		//----------------------------- Calculate BackWardPush    ----------------------------------
+		private void OnCollisionPush(Vector3 collisionObject, float knockBackForce) {
+			var explosionDir = collisionObject - transform.position;
+			var explosionDistance = explosionDir.magnitude;
+			float upwardsModifier = 0;
+			// Normalize without computing magnitude again
+			if (upwardsModifier == 0)
+				explosionDir /= explosionDistance;
+			else
+			{
+				// From Rigidbody.AddExplosionForce doc:
+				// If you pass a non-zero value for the upwardsModifier parameter, the direction
+				// will be modified by subtracting that value from the Y component of the centre point.
+				explosionDir.y += upwardsModifier;
+				explosionDir.Normalize();
+			}
+			rb.AddForce((-1)* knockBackForce * explosionDir, ForceMode2D.Impulse);
+			//rb.AddForce(Mathf.Lerp(0, 50, (1 - explosionDistance)) * explosionDir,ForceMode2D.Impulse);
+		}
+	
 
+		
 		//----------------------------- Game Over Collison Detection -------------------------------
 		private void OnCollisionEnter2D(Collision2D collision)
 		{
-			if (collision.gameObject.tag != "Parking_Spot")
+			if (!collision.gameObject.CompareTag("Parking_Spot"))
 			{
-				if (!_gameCompleted)
+				/*if (!_gameCompleted)
 				{
 					//Game_Over.SetActive(true);
 					_gameCompleted = true;
 					GameManager.Game.Level.GameCompleted(false);
+				}*/
+			}
+
+			if (collision.gameObject.CompareTag("Obstacle")) {
+
+				StopCar(collision.GetContact(0).point);
+				GameManager.Game.Anime.Flash(CarSprite, _carFlashTime);
+				try
+				{
+					_healthcontroller.DamageHealth(collision.gameObject.GetComponent<ObstacleController>().DamageAfterCollision);
+				}
+				catch {
+					_healthcontroller.DamageHealth(_defaultDamage);
 				}
 			}
 		}

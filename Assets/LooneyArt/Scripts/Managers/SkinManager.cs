@@ -10,6 +10,8 @@ namespace LooneyDog
     {
         public VehicleData[] Vehicles { get { return _vehicles; }set { _vehicles = value; } }
         public VehicleID CurrentCarSkin { get { return _currentCarSkin; }set { _currentCarSkin = value; } }
+        
+        
         [SerializeField] private VehicleData[] _vehicles;
         [SerializeField] private VehicleID _currentCarSkin;
 
@@ -17,6 +19,19 @@ namespace LooneyDog
             CarSkin.sprite = _vehicles[(int)_currentCarSkin].CarSkin;
             currentCar.AccelerationPower = _vehicles[(int)_currentCarSkin].Accelaration;
             currentCar.SteeringPower = _vehicles[(int)_currentCarSkin].Handling;
+        }
+
+        public void ApplyCarPrefab(Car_Controller currentCar) {
+            currentCar.CarPrefab = Instantiate(_vehicles[(int)_currentCarSkin].CarPrefab, currentCar.transform);
+            currentCar.CarSprite = currentCar.CarPrefab.GetComponent<SpriteRenderer>();
+            currentCar.AccelerationPower = _vehicles[(int)_currentCarSkin].Accelaration;
+            currentCar.SteeringPower = _vehicles[(int)_currentCarSkin].Handling;
+        }
+
+        public void ApplyHealthAndArmor(HealthControler currentCar) {
+            currentCar.Health = _vehicles[(int)_currentCarSkin].Health;
+            currentCar.Armor = _vehicles[(int)_currentCarSkin].Armor;
+            GameManager.Game.Screen.GameScreen.HealthMeter.SetMeters(currentCar.Health, currentCar.Armor);
         }
 
         public void SetVehicleSkin(VehicleID _selectedCarSkin) {

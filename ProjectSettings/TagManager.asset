@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Parking_Spot
+  - Obstacle
+  - MiniMapCamera
   layers:
   - Default
   - TransparentFX
@@ -37,7 +39,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - MiniMap
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -71,4 +73,7 @@ TagManager:
     locked: 0
   - name: above_car
     uniqueID: 3127438049
+    locked: 0
+  - name: MiniMap
+    uniqueID: 1408409595
     locked: 0

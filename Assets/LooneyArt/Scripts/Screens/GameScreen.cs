@@ -9,14 +9,18 @@ namespace LooneyDog {
         public Controller ControllerUi { get { return _controllerUi; }set { _controllerUi = value; } }
         public ResultPopUp ResultPanel { get { return _resultPanel; }set { _resultPanel = value; }  }
         public StopWatch StopWatchTimer { get { return _stopWatchTimer; }set { _stopWatchTimer = value; } }
-
+        public HealthMeterControllerUI HealthMeter { get { return _healthMeter; }set { _healthMeter = value; } }
         public float TransitionSpeed { get { return _transitionSpeed; }set { _transitionSpeed = value; } }
+
+        public MiniMapController MiniMapControl { get { return _minimapControl; }set { _minimapControl = value; } }
 
         [SerializeField] private Controller _controllerUi;
         [SerializeField] private ResultPopUp _resultPanel;
         [SerializeField] private float _transitionSpeed;
         [SerializeField] private StopWatch _stopWatchTimer;
         [SerializeField] private bool _startGameTimer;
+        [SerializeField] private HealthMeterControllerUI _healthMeter;
+        [SerializeField] private MiniMapController _minimapControl;
 
 
         private void OnEnable()
@@ -31,8 +35,9 @@ namespace LooneyDog {
             StopTimer();
         }
 
-        public void SetCarControllerToUi(Transform CarController) {
+        public void SetCarControllerToUi(Transform CarController,Transform nextObjective) {
             _controllerUi.SteeringWheel.Car = CarController;
+            _minimapControl.SetMiniMapDetails(CarController, nextObjective);
         }
 
         public void GameWin(int StarsObtained, int Reward) {

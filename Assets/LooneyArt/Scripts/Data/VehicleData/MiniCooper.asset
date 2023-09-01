@@ -16,4 +16,7 @@ MonoBehaviour:
   _accelaration: 6
   _handling: 6
   _carSkin: {fileID: 21300000, guid: 7af493b7c6733ae49a006d2690a94b59, type: 3}
-  _unLocked: 0
+  _unLocked: 1
+  _health: 100
+  _armor: 0
+  _carPrefab: {fileID: 4407097498417112139, guid: 38b714cb64e885b48a514ff09192b27a, type: 3}
