@@ -28,6 +28,7 @@ namespace LooneyDog {
             _resultPanel.gameObject.SetActive(false);
             _controllerUi.gameObject.SetActive(true);
             _startGameTimer=false;
+            GameManager.Game.Sound.PlayMusic(BgMusicId.HorrorSoft);
         }
 
         private void OnDisable()

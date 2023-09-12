@@ -15,8 +15,9 @@ namespace LooneyDog
         public AnimationManager Anime;
         public SkinManager Skin;
         public PoolManager Pool;
-        /*public SoundManager Sound;
-        public AdManager Admob;*/
+
+        public SoundManager Sound;
+        /*public AdManager Admob;*/
         /* 
          public SoundManager Sound;*/
 
@@ -51,8 +52,8 @@ namespace LooneyDog
             if (Anime == null) { Anime = gameObject.GetComponent<AnimationManager>(); }
             if (Pool == null) { Pool = gameObject.GetComponent<PoolManager>(); }
 
-            /*if (Sound == null) { Sound = gameObject.GetComponent<SoundManager>(); }
-            if (Admob == null) { Admob = gameObject.GetComponent<AdManager>(); }*/
+            if (Sound == null) { Sound = gameObject.GetComponent<SoundManager>(); }
+            /*if (Admob == null) { Admob = gameObject.GetComponent<AdManager>(); }*/
             if (Skin == null) { Skin = gameObject.GetComponent<SkinManager>(); }
             if (Screen == null) { Screen = gameObject.GetComponent<ScreenManager>(); }
 
