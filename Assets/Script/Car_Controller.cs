@@ -13,6 +13,9 @@ namespace LooneyDog
 		public GameObject CarPrefab { get { return _carPrefab; } set { _carPrefab = value; } }
 		public HealthControler Healthcontroller { get { return _healthcontroller; }set{ _healthcontroller = value; } }
 
+		public CarPassengerController PassengerController { get { return _passengerController; }set { _passengerController = value; } }
+		public CarAnimatorController CarAniController { get { return _carAnimatorController; }set { _carAnimatorController = value; } }
+
 		[SerializeField]  Rigidbody2D rb;
 
 		[SerializeField]
@@ -29,8 +32,12 @@ namespace LooneyDog
 		[SerializeField] private HealthControler _healthcontroller;
 		[SerializeField] private float _defaultDamage,_carFlashTime,_knockBack;
 		[SerializeField] private Transform _nextObjective;
-		[SerializeField] CameraController _cameraController;
-		[SerializeField] GameObject _carPrefab;
+		[SerializeField] private CameraController _cameraController;
+		[SerializeField] private GameObject _carPrefab;
+		[SerializeField] private CarPassengerController _passengerController;
+		[SerializeField] private CarAnimatorController _carAnimatorController;
+
+
 		
 
 		//------------------------------  Initialisations   -----------------------------------
@@ -40,7 +47,6 @@ namespace LooneyDog
 			Parking_dot_Front.Parking_Front = false;
 			Parking_Spot_back.Parking_Back = false;
 			GameManager.Game.Screen.GameScreen.SetCarControllerToUi(transform,_nextObjective);
-			//GameManager.Game.Skin.ApplySkin(this, _carSprite);
 			GameManager.Game.Skin.ApplyCarPrefab(this);
 			_cameraController.SetCameraFollowObject(transform);
 		}
@@ -49,18 +55,18 @@ namespace LooneyDog
 		void FixedUpdate()
 		{
 
-			//----------------------------------------  Game Win Parking Detection   ----------
-			if (Parking_dot_Front.Parking_Front == true && Parking_Spot_back.Parking_Back == true)
-			{
-				//Game_Win.SetActive(true);
-				rb.velocity = Vector2.zero;
-				if (!_gameCompleted)
-				{
-					_gameCompleted = true;
-					GameManager.Game.Level.GameCompleted(true);
-				}
-			}
-			steeringAmount = -Steering_Wheel.output_Steering;
+            //----------------------------------------  Game Win Parking Detection   ----------
+            /*if (Parking_dot_Front.Parking_Front == true && Parking_Spot_back.Parking_Back == true)
+            {
+                //Game_Win.SetActive(true);
+                rb.velocity = Vector2.zero;
+                if (!_gameCompleted)
+                {
+                    _gameCompleted = true;
+                    GameManager.Game.Level.GameCompleted(true);
+                }
+            }*/
+            steeringAmount = -Steering_Wheel.output_Steering;
 			steeringAmount = steeringAmount / 2;
 			//-------------------------------------  Car Volumne Control Function  -----------
 			carvol();
@@ -135,7 +141,7 @@ namespace LooneyDog
 				}*/
 			}
 
-			if (collision.gameObject.CompareTag("Obstacle")) {
+			if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("ObstacleAndCover")) {
 
 				StopCar(collision.GetContact(0).point);
 				GameManager.Game.Anime.Flash(CarSprite, _carFlashTime);

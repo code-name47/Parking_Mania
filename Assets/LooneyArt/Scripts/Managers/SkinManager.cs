@@ -23,7 +23,16 @@ namespace LooneyDog
 
         public void ApplyCarPrefab(Car_Controller currentCar) {
             currentCar.CarPrefab = Instantiate(_vehicles[(int)_currentCarSkin].CarPrefab, currentCar.transform);
-            currentCar.CarSprite = currentCar.CarPrefab.GetComponent<SpriteRenderer>();
+            // -------- getting components from car prefab  ------------------------
+            try {
+                currentCar.CarAniController = currentCar.CarPrefab.GetComponent<CarAnimatorController>();
+            }
+            catch {
+                currentCar.CarAniController = null;
+                Debug.Log("CarAniController Not Found In CurrentCar Car_Controller Please make sure the car preab has caranicontroller");
+            }
+            //---
+            currentCar.CarSprite = currentCar.CarAniController.CarBodySpriteRenderer;
             currentCar.AccelerationPower = _vehicles[(int)_currentCarSkin].Accelaration;
             currentCar.SteeringPower = _vehicles[(int)_currentCarSkin].Handling;
         }

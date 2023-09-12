@@ -14,6 +14,7 @@ namespace LooneyDog
         public ScreenManager Screen;
         public AnimationManager Anime;
         public SkinManager Skin;
+        public PoolManager Pool;
         /*public SoundManager Sound;
         public AdManager Admob;*/
         /* 
@@ -48,6 +49,7 @@ namespace LooneyDog
             if (Data == null) { Data = gameObject.GetComponent<DataManager>(); }
             if (Level == null) { Level = gameObject.GetComponent<LevelManager>(); }
             if (Anime == null) { Anime = gameObject.GetComponent<AnimationManager>(); }
+            if (Pool == null) { Pool = gameObject.GetComponent<PoolManager>(); }
 
             /*if (Sound == null) { Sound = gameObject.GetComponent<SoundManager>(); }
             if (Admob == null) { Admob = gameObject.GetComponent<AdManager>(); }*/

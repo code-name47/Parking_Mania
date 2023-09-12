@@ -16,6 +16,8 @@ namespace LooneyDog
 
         public bool GameCompletedBool { get { return _gameCompletedBool; }set { _gameCompletedBool = value; } }
 
+        public Car_Controller CurrentActiveCar { get { return _currentActiveCar; }set { _currentActiveCar = value; } }
+
         [SerializeField] private int _levelNumber;
         [SerializeField] private GameDifficulty _difficulty;
         [SerializeField] private int _reward;
@@ -23,7 +25,8 @@ namespace LooneyDog
         [SerializeField] private bool _gameCompletedBool;
         private LevelDataStruct Currentleveldata;
 
-        [SerializeField] private LevelData[] levelDatas; 
+        [SerializeField] private LevelData[] levelDatas;
+        [SerializeField] Car_Controller _currentActiveCar;
 
         public void GetLevelData(int levelNumber, GameDifficulty gamedifficulty) {
             if (levelNumber == levelDatas[levelNumber-1].LevelNumber)//-1 coz sciptable object array starts from 0
@@ -125,6 +128,10 @@ namespace LooneyDog
             GameManager.Game.Screen.Top.UpdateCoinData();
         }
 
+        public void SetCurrentActiveCar(Car_Controller _currentCar) {
+            _currentActiveCar = _currentCar;
+            //GameManager.Game.Screen.GameScreen.SetCarControllerToUi(transform, _nextObjective);
+        }
 
     }
 }

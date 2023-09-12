@@ -39353,6 +39353,7 @@ GameObject:
   - component: {fileID: 1193146021}
   - component: {fileID: 1193146022}
   - component: {fileID: 1193146023}
+  - component: {fileID: 1193146024}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -39396,6 +39397,7 @@ MonoBehaviour:
   Screen: {fileID: 1193146017}
   Anime: {fileID: 1193146022}
   Skin: {fileID: 1193146023}
+  Pool: {fileID: 1193146024}
 --- !u!4 &1193146019
 Transform:
   m_ObjectHideFlags: 0
@@ -39458,6 +39460,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 751a16209980cd04a894280252a41100, type: 2}
   - {fileID: 11400000, guid: 0eff4d8e5f4833d47abccf2d9258f2d9, type: 2}
   - {fileID: 11400000, guid: fe84f92bfa8498e44ae39a4dade88e56, type: 2}
+  _currentActiveCar: {fileID: 0}
 --- !u!114 &1193146022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39495,6 +39498,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f35cb3c9e8671634f8f9047dc7ac714c, type: 2}
   - {fileID: 11400000, guid: 8a80ce2d6328d8a4395b84279e87a847, type: 2}
   _currentCarSkin: 0
+--- !u!114 &1193146024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193146016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8dd1e33c357b84fab2b7f02efa84c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UseAiHideColliderMovingSpotPool: 1
+  _raycastCollider: {fileID: 8121295761871982350, guid: 0861d2ebf653c124ab0178e88a3406a1, type: 3}
 --- !u!1 &1195836082
 GameObject:
   m_ObjectHideFlags: 0
